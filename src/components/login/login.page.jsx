@@ -1,10 +1,7 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
 import './login.styles.css'
 
 function LoginPage() {
-  const navigate = useNavigate()
-
   return (
     <div className="login-container">
       <div className="login-form">
@@ -20,12 +17,12 @@ function LoginPage() {
           </div>
           <div className="button-container">
             <button type="submit" className="submit-button">Iniciar sesión</button>
-            <button type="button" className="submit-button" onClick={() => navigate('/register')}>Crear cuenta nueva</button>
+            <button type="button" className="submit-button">Crear cuenta nueva</button>
           </div>
         </form>
       </div>
     </div>
-  )
+  ) 
 }
 
 export default LoginPage
