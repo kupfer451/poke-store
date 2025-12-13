@@ -20,6 +20,7 @@ function Navbar() {
           <Link to="/login">
             <button className="login-button"> Iniciar sesión </button>
           </Link>
+          <button className="cart-button">🛒</button>
         </div>
       </div>
     </header>

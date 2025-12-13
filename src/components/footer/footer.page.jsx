@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="site-footer">
       <div className="footer-content">
         <div className="footer-section">
-          <h3 className="footer-brand">PokéStore</h3>
+          <h3 className="footer-brand">PokeStore</h3>
           <p className="footer-description">
             Tu tienda de confianza para cartas y artículos Pokémon. 
             Colecciona, intercambia y disfruta.
@@ -43,7 +43,7 @@ export default function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <p>&copy; 2025 PokéStore. Todos los derechos reservados.</p>
+        <p>&copy; 2025 PokeStore. Todos los derechos reservados.</p>
         <div className="footer-social">
           <a href="#" aria-label="Facebook">Facebook</a>
           <a href="#" aria-label="Twitter">Twitter</a>
