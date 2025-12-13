@@ -40,6 +40,7 @@ function LoginPage() {
     setError('');
     // Simulate a successful login
     console.log('Login successful');
+    console.log('Datos del formulario:', formData);
     navigate('/');
   };
 

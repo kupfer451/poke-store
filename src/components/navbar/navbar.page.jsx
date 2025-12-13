@@ -12,7 +12,7 @@ function Navbar() {
 
         <nav className="nav-links" aria-label="main navigation">
           <Link to="/">Inicio</Link>
-          <a href="#productos">Productos</a>
+          <Link to="/producto">Productos</Link>
           <a href="#nosotros">Nosotros</a>
         </nav>
 
@@ -20,9 +20,7 @@ function Navbar() {
           <Link to="/login">
             <button className="login-button"> Iniciar sesión </button>
           </Link>
-          <Link to="/carrito">
-            <button className="cart-button">🛒</button>
-          </Link>
+          <button className="cart-button" onClick={() => navigate('/carrito')}>🛒</button>
         </div>
       </div>
     </header>

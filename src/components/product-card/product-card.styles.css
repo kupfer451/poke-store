@@ -1,0 +1,81 @@
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: var(--color-pink);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.product-image {
+  max-width: 80%;
+  height: auto;
+  margin-bottom: 16px;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.05);
+}
+
+.product-info {
+  padding: 0 8px;
+}
+
+.product-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+}
+
+.product-description {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0 0 16px 0;
+  min-height: 40px; 
+}
+
+.product-price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  margin: 0 0 16px 0;
+}
+
+.add-to-cart-btn {
+  background: linear-gradient(135deg, var(--color-sky), var(--color-lime));
+  color: var(--color-dark);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.add-to-cart-btn:hover {
+  background: linear-gradient(135deg, var(--color-lime), var(--color-sky));
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(112, 214, 255, 0.3);
+}
