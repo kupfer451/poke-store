@@ -13,7 +13,7 @@ function Navbar() {
         <nav className="nav-links" aria-label="main navigation">
           <Link to="/">Inicio</Link>
           <Link to="/producto">Productos</Link>
-          <a href="#nosotros">Nosotros</a>
+          <Link to="/nosotros">Nosotros</Link>
         </nav>
 
         <div className="nav-actions">
