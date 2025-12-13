@@ -41,3 +41,38 @@ h2 {
 .checkout-button-container .submit-button {
   width: auto;
 }
+
+.success-message {
+  background-color: #27ae60;
+  color: white;
+  padding: 16px 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+  animation: slideIn 0.3s ease-out;
+}
+
+.error-message {
+  background-color: #e00c0c;
+  color: white;
+  padding: 16px 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

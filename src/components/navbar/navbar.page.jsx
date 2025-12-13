@@ -20,7 +20,7 @@ function Navbar() {
           <Link to="/login">
             <button className="login-button"> Iniciar sesión </button>
           </Link>
-          <button className="cart-button" onClick={() => navigate('/carrito')}>🛒</button>
+          <button className="login-button" onClick={() => navigate('/carrito')}>Carrito de compras</button>
         </div>
       </div>
     </header>
