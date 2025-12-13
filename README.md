@@ -1,2 +1,2 @@
 # poke-store
-Uma tiendinha do pokemon
+Tienda de cartas Pokémon
