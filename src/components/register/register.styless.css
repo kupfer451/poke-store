@@ -1,4 +1,4 @@
-.login-container {
+.register-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6,7 +6,7 @@
   background: linear-gradient(135deg, #a8d8ea 0%, #d4e6f1 100%);
 }
 
-.login-form {
+.register-form {
   background: white;
   padding: 40px;
   border-radius: 15px;
@@ -65,4 +65,22 @@ input {
   display: flex;
   flex-direction: column;
   gap: 15px;
+}
+
+.login-button-secondary {
+  background-color: transparent;
+  color: #7fb3d5;
+  border: 2px solid #7fb3d5;
+  padding: 13px 40px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.login-button-secondary:hover {
+  background-color: #7fb3d5;
+  color: white;
 }

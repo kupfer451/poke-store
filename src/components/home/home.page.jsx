@@ -6,7 +6,7 @@ function HomePage() {
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-content">
-          <h1 className="hero-title">Bienvenido a PokéStore</h1>
+          <h1 className="hero-title">Bienvenido a PokeStore</h1>
           <p className="hero-subtitle">Tu tienda de confianza para cartas Pokémon</p>
           <button className="hero-button">Ver Colección</button>
         </div>
