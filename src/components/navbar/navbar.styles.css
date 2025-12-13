@@ -46,8 +46,8 @@
 }
 
 .login-button {
-  background: #2563eb;
-  color: #fff;
+  background: var(--color-primary);
+  color: var(--color-text-dark);
   border: none;
   padding: 8px 12px;
   border-radius: 8px;
@@ -56,5 +56,5 @@
 }
 
 .login-button:hover {
-  background: #1e40af;
+  filter: brightness(0.95);
 }

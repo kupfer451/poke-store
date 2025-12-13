@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './navbar.styles.css'
 
 function Navbar() {
@@ -14,7 +15,7 @@ function Navbar() {
         </nav>
 
         <div className="nav-actions">
-          <button className="login-button">Iniciar sesión</button>
+          <Link to="/login" className="login-button">Iniciar sesión</Link>
         </div>
       </div>
     </header>
