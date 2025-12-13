@@ -8,7 +8,7 @@ function Navbar() {
   return (
     <header className="site-navbar">
       <div className="navbar-inner">
-        <div className="brand">PokeStore</div>
+        <Link className="brand" to="/">PokeStore</Link>
 
         <nav className="nav-links" aria-label="main navigation">
           <Link to="/">Inicio</Link>
@@ -17,7 +17,9 @@ function Navbar() {
         </nav>
 
         <div className="nav-actions">
-          <button className="login-button" onClick={() => navigate('/login')}>Iniciar sesión</button>
+          <Link to="/login">
+            <button className="login-button"> Iniciar sesión </button>
+          </Link>
         </div>
       </div>
     </header>

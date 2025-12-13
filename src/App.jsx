@@ -4,6 +4,7 @@ import Navbar from './components/navbar/navbar.page.jsx'
 import LoginPage from './components/login/login.page.jsx'
 import RegisterPage from './components/register/register.page.jsx'
 import './App.css'
+import Footer from './components/footer/footer.page.jsx'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
       </Routes>
+      <Footer />
     </>
   )
 }

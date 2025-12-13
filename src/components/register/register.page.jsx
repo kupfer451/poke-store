@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import '../login/login.styles.css'
 
@@ -24,7 +25,9 @@ function RegisterPage() {
           </div>
           <div className="button-container">
             <button type="submit" className="submit-button">Registrarse</button>
-            <button type="button" className="submit-button" onClick={() => navigate('/login')}>¿Ya tienes cuenta? Inicia sesión</button>
+            <Link to="/login">
+              <button type="button" className="submit-button">¿Ya tienes cuenta? Inicia sesión</button>
+            </Link>
           </div>
         </form>
       </div>

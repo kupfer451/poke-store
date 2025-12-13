@@ -1,4 +1,4 @@
-import React from 'react'
+import { Link } from 'react-router-dom'
 import './login.styles.css'
 
 function LoginPage() {
@@ -17,7 +17,9 @@ function LoginPage() {
           </div>
           <div className="button-container">
             <button type="submit" className="submit-button">Iniciar sesión</button>
-            <button type="button" className="submit-button">Crear cuenta nueva</button>
+            <Link to="/register">
+              <button type="button" className="submit-button">Crear cuenta nueva</button>
+            </Link>
           </div>
         </form>
       </div>
