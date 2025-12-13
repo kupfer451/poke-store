@@ -1,11 +1,33 @@
 :root {
+  /* Primary palette */
+  --color-sky: #70d6ff;
+  --color-sky-light: #a8e6ff;
+  --color-pink: #ff70a6;
+  --color-pink-light: #ffa8c9;
+  --color-coral: #ff9770;
+  --color-yellow: #ffd670;
+  --color-lime: #e9ff70;
+  
+  /* Secondary colors */
+  --color-dark: #2d3436;
+  --color-gray: #636e72;
+  --color-light-gray: #b2bec3;
+  --color-white: #ffffff;
+  --color-bg: #fffef5;
+  
+  /* Hover variants */
+  --color-sky-dark: #4fc3f7;
+  --color-pink-dark: #e91e8c;
+  --color-coral-dark: #ff7043;
+
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #FFFEF5;
+  color-scheme: light;
+  color: var(--color-dark);
+  background: #FFFEF5;
+  min-height: 100vh;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

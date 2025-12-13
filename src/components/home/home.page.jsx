@@ -34,8 +34,8 @@ function HomePage() {
           </div>
           <div className="category-card">
             <div className="category-icon diamond"></div>
-            <h3>Premium</h3>
-            <p>Cartas exclusivas</p>
+            <h3>Accesorios</h3>
+            <p>Accesorios para tus cartas</p>
           </div>
         </div>
       </section>
@@ -96,49 +96,6 @@ function HomePage() {
                 <button className="add-to-cart">Añadir</button>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us */}
-      <section className="features-section">
-        <h2 className="section-title">¿Por Qué Elegirnos?</h2>
-        <div className="features-grid">
-          <div className="feature-item">
-            <div className="feature-icon shipping"></div>
-            <h3>Envío Rápido</h3>
-            <p>Entregas en 24-48 horas</p>
-          </div>
-          <div className="feature-item">
-            <div className="feature-icon check"></div>
-            <h3>Garantía</h3>
-            <p>100% autenticidad garantizada</p>
-          </div>
-          <div className="feature-item">
-            <div className="feature-icon card"></div>
-            <h3>Pago Seguro</h3>
-            <p>Múltiples métodos de pago</p>
-          </div>
-          <div className="feature-item">
-            <div className="feature-icon gift"></div>
-            <h3>Recompensas</h3>
-            <p>Programa de fidelidad</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Newsletter */}
-      <section className="newsletter-section">
-        <div className="newsletter-content">
-          <h2>Únete a Nuestra Comunidad</h2>
-          <p>Recibe ofertas exclusivas y noticias sobre nuevas colecciones</p>
-          <div className="newsletter-form">
-            <input 
-              type="email" 
-              placeholder="Tu correo electrónico" 
-              className="newsletter-input"
-            />
-            <button className="newsletter-button">Suscribirse</button>
           </div>
         </div>
       </section>
