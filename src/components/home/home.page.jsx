@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './home.styles.css';
 
 function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const navigate = useNavigate();
+
+  const handleAddToCart = () => {
+    navigate('/carrito');
+  };
 
   const categories = [
     {
@@ -55,7 +61,7 @@ function HomePage() {
 
       {/* Featured Categories */}
       <section className="categories-section">
-        <h2 className="section-title">Categorías Destacadas</h2>
+        <h2 className="section-title">Nuevos Productos</h2>
         <div className="categories-grid">
           <div className="category-card">
             <img src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/025.png" alt="Cartas Nuevas" className="category-image" />
@@ -91,8 +97,8 @@ function HomePage() {
               <h3 className="product-name">Pikachu VMAX</h3>
               <p className="product-description">Carta holográfica rara</p>
               <div className="product-footer">
-                <span className="product-price">$29.99</span>
-                <button className="add-to-cart">Añadir</button>
+                <span className="product-price">$29.990</span>
+                <button className="add-to-cart" onClick={handleAddToCart}>Agregar al Carrito</button>
               </div>
             </div>
           </div>
@@ -104,8 +110,8 @@ function HomePage() {
               <h3 className="product-name">Charizard GX</h3>
               <p className="product-description">Edición especial</p>
               <div className="product-footer">
-                <span className="product-price">$49.99</span>
-                <button className="add-to-cart">Añadir</button>
+                <span className="product-price">$49.990</span>
+                <button className="add-to-cart" onClick={handleAddToCart}>Agregar al Carrito</button>
               </div>
             </div>
           </div>
@@ -117,8 +123,8 @@ function HomePage() {
               <h3 className="product-name">Mewtwo EX</h3>
               <p className="product-description">Carta promocional</p>
               <div className="product-footer">
-                <span className="product-price">$19.99</span>
-                <button className="add-to-cart">Añadir</button>
+                <span className="product-price">$19.990</span>
+                <button className="add-to-cart" onClick={handleAddToCart}>Agregar al Carrito</button>
               </div>
             </div>
           </div>
@@ -129,8 +135,9 @@ function HomePage() {
               <h3 className="product-name">Eevee Evoluciones</h3>
               <p className="product-description">Set completo</p>
               <div className="product-footer">
-                <span className="product-price">$89.99</span>
-                <button className="add-to-cart">Añadir</button>
+                <div className="product-price">$89.990</div>
+
+                <button className="add-to-cart" onClick={handleAddToCart}>Agregar al Carrito</button>
               </div>
             </div>
           </div>
