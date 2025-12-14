@@ -2,52 +2,80 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './home.styles.css';
 
+const ProductCard = ({ product }) => {
+  const [showAdded, setShowAdded] = useState(false);
+
+  const handleAddToCart = () => {
+    console.log(`Agregado: ${product.name}`);
+
+    setShowAdded(true);
+
+    setTimeout(() => {
+      setShowAdded(false);
+    }, 1000);
+  };
+
+  return (
+    <div className="product-card">
+      <div className="product-image"></div>
+      <div className="product-info">
+        <h3 className="product-name">{product.name}</h3>
+        <p className="product-description">{product.description}</p>
+        <div className="product-footer">
+          <span className="product-price">{product.price}</span>
+          <button className="add-to-cart" onClick={handleAddToCart}>
+            Agregar al Carrito
+          </button>
+        </div>
+      </div>
+      
+      {/* Mensaje */}
+      {showAdded && (
+        <div className="mensaje-exito">Producto agregado al carrito</div>
+      )}
+    </div>
+  );
+};
+
 function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const navigate = useNavigate();
 
-  const handleAddToCart = () => {
-    navigate('/carrito');
-  };
-
-  const categories = [
+  const products = [
     {
       id: 1,
-      image: 'https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/025.png',
-      title: 'Cartas Nuevas',
-      description: 'Las últimas colecciones',
-      alt: 'Cartas Nuevas'
+      name: 'Pikachu VMAX',
+      description: 'Carta holográfica rara',
+      price: '$29.990'
     },
     {
       id: 2,
-      image: 'https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/006.png',
-      title: 'Cartas Raras',
-      description: 'Ediciones limitadas',
-      alt: 'Cartas Raras'
+      name: 'Charizard GX',
+      description: 'Edición especial',
+      price: '$49.990'
     },
     {
       id: 3,
-      image: 'https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/149.png',
-      title: 'Ofertas',
-      description: 'Descuentos especiales',
-      alt: 'Ofertas'
+      name: 'Mewtwo EX',
+      description: 'Carta promocional',
+      price: '$19.990'
     },
     {
       id: 4,
-      image: 'https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/150.png',
-      title: 'Accesorios',
-      description: 'Accesorios para tus cartas',
-      alt: 'Accesorios'
+      name: 'Eevee Evoluciones',
+      description: 'Set completo',
+      price: '$89.990'
     }
   ];
 
-  const handlePrev = () => {
-    setCurrentSlide((prev) => (prev === 0 ? categories.length - 1 : prev - 1));
-  };
 
-  const handleNext = () => {
-    setCurrentSlide((prev) => (prev === categories.length - 1 ? 0 : prev + 1));
-  };
+  const categories = [
+    { id: 1, image: 'https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/025.png', title: 'Cartas Nuevas', description: 'Las últimas colecciones' },
+    { id: 2, image: 'https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/006.png', title: 'Cartas Raras', description: 'Ediciones limitadas' },
+    { id: 3, image: 'https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/149.png', title: 'Ofertas', description: 'Descuentos especiales' },
+    { id: 4, image: 'https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/150.png', title: 'Accesorios', description: 'Accesorios para tus cartas' }
+  ];
+
   return (
     <div className="home-container">
       {/* Hero Section */}
@@ -59,88 +87,28 @@ function HomePage() {
         <div className="hero-pokeball"></div>
       </section>
 
-      {/* Featured Categories */}
+      {/* Sección de caregorias -> array*/}
       <section className="categories-section">
         <h2 className="section-title">Nuevos Productos</h2>
         <div className="categories-grid">
-          <div className="category-card">
-            <img src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/025.png" alt="Cartas Nuevas" className="category-image" />
-            <h3>Cartas Nuevas</h3>
-            <p>Las últimas colecciones</p>
-          </div>
-          <div className="category-card">
-            <img src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/006.png" alt="Cartas Raras" className="category-image" />
-            <h3>Cartas Raras</h3>
-            <p>Ediciones limitadas</p>
-          </div>
-          <div className="category-card">
-            <img src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/149.png" alt="Ofertas" className="category-image" />
-            <h3>Ofertas</h3>
-            <p>Descuentos especiales</p>
-          </div>
-          <div className="category-card">
-            <img src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/150.png" alt="Accesorios" className="category-image" />
-            <h3>Accesorios</h3>
-            <p>Accesorios para tus cartas</p>
-          </div>
+          {categories.map((cat) => (
+            <div key={cat.id} className="category-card">
+              <img src={cat.image} alt={cat.title} className="category-image" />
+              <h3>{cat.title}</h3>
+              <p>{cat.description}</p>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* Featured Products */}
+      {/* Featured Products*/}
       <section className="products-section">
         <h2 className="section-title">Productos Destacados</h2>
         <div className="products-grid">
-          <div className="product-card">
-            <div className="product-image">
-            </div>
-            <div className="product-info">
-              <h3 className="product-name">Pikachu VMAX</h3>
-              <p className="product-description">Carta holográfica rara</p>
-              <div className="product-footer">
-                <span className="product-price">$29.990</span>
-                <button className="add-to-cart" onClick={handleAddToCart}>Agregar al Carrito</button>
-              </div>
-            </div>
-          </div>
-
-          <div className="product-card">
-            <div className="product-image">
-            </div>
-            <div className="product-info">
-              <h3 className="product-name">Charizard GX</h3>
-              <p className="product-description">Edición especial</p>
-              <div className="product-footer">
-                <span className="product-price">$49.990</span>
-                <button className="add-to-cart" onClick={handleAddToCart}>Agregar al Carrito</button>
-              </div>
-            </div>
-          </div>
-
-          <div className="product-card">
-            <div className="product-image">
-            </div>
-            <div className="product-info">
-              <h3 className="product-name">Mewtwo EX</h3>
-              <p className="product-description">Carta promocional</p>
-              <div className="product-footer">
-                <span className="product-price">$19.990</span>
-                <button className="add-to-cart" onClick={handleAddToCart}>Agregar al Carrito</button>
-              </div>
-            </div>
-          </div>
-
-          <div className="product-card">
-            <div className="product-image"></div>
-            <div className="product-info">
-              <h3 className="product-name">Eevee Evoluciones</h3>
-              <p className="product-description">Set completo</p>
-              <div className="product-footer">
-                <div className="product-price">$89.990</div>
-
-                <button className="add-to-cart" onClick={handleAddToCart}>Agregar al Carrito</button>
-              </div>
-            </div>
-          </div>
+          {/*Renderizar prod*/}
+          {products.map((prod) => (
+            <ProductCard key={prod.id} product={prod} />
+          ))}
         </div>
       </section>
     </div>
