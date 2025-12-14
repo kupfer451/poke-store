@@ -135,83 +135,13 @@
 
 .categories-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
-}
-
-.carousel-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  position: relative;
-}
-
-.carousel-btn {
-  background: linear-gradient(135deg, #7fb3d5, #a8d8ea);
-  border: none;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  font-size: 1.5rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  color: white;
-  flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.carousel-btn:hover {
-  background: linear-gradient(135deg, #5a9ec5, #7fb3d5);
-  transform: scale(1.1);
-}
-
-.carousel-wrapper {
-  width: 100%;
-  max-width: 400px;
-  overflow: hidden;
-}
-
-.categories-carousel {
-  display: flex;
-  transition: transform 0.5s ease;
-}
-
-.categories-carousel .category-card {
-  min-width: 100%;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-.categories-carousel .category-card.active {
-  opacity: 1;
-}
-
-.carousel-dots {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  border: 2px solid #7fb3d5;
-  background: white;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.dot.active {
-  background: #7fb3d5;
-  transform: scale(1.2);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
 }
 
 .category-card {
   background: linear-gradient(135deg, #d4e6f1 0%, #a8d8ea 100%);
-  padding: 60px 30px;
+  padding: 40px 20px;
   border-radius: 15px;
   text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.4);
@@ -232,27 +162,15 @@
   margin-bottom: 15px;
 }
 
-.category-image {
-  width: 160px;
-  height: 160px;
-  object-fit: contain;
-  margin-bottom: 20px;
-  transition: transform 0.3s ease;
-}
-
-.category-card:hover .category-image {
-  transform: scale(1.1);
-}
-
 .category-card h3 {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   color: #333;
   margin-bottom: 10px;
 }
 
 .category-card p {
   color: #666;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 /* Products Section */
@@ -267,34 +185,6 @@
   gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
-}
-
-.products-carousel-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  position: relative;
-  width: 100%;
-  max-width: none;
-  margin: 0 auto;
-}
-
-.products-carousel-wrapper {
-  flex: 1;
-  max-width: 1300px;
-  overflow: hidden;
-}
-
-.products-carousel {
-  display: flex;
-  gap: 30px;
-  transition: transform 0.5s ease;
-}
-
-.products-carousel .product-card {
-  min-width: calc(50% - 15px);
-  flex-shrink: 0;
 }
 
 .product-card {
