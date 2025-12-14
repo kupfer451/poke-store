@@ -1,79 +1,56 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import ProductCard from '../product-card/product-card.page.jsx'; // Asegúrate de importar ProductCard si lo sacaste a otro archivo
 import './home.styles.css';
 
-const ProductCard = ({ product }) => {
-  const [showAdded, setShowAdded] = useState(false);
-
-  const handleAddToCart = () => {
-    console.log(`Agregado: ${product.name}`);
-
-    setShowAdded(true);
-
-    setTimeout(() => {
-      setShowAdded(false);
-    }, 1000);
-  };
-
-  return (
-    <div className="product-card">
-      <div className="product-image"></div>
-      <div className="product-info">
-        <h3 className="product-name">{product.name}</h3>
-        <p className="product-description">{product.description}</p>
-        <div className="product-footer">
-          <span className="product-price">{product.price}</span>
-          <button className="add-to-cart" onClick={handleAddToCart}>
-            Agregar al Carrito
-          </button>
-        </div>
-      </div>
-      
-      {/* Mensaje */}
-      {showAdded && (
-        <div className="mensaje-exito">Producto agregado al carrito</div>
-      )}
-    </div>
-  );
-};
-
 function HomePage() {
-  const [currentSlide, setCurrentSlide] = useState(0);
   const navigate = useNavigate();
 
-  const products = [
-    {
-      id: 1,
-      name: 'Pikachu VMAX',
-      description: 'Carta holográfica rara',
-      price: '$29.990'
+  // Array de categorías actualizado con la propiedad 'path'
+  const categories = [
+    { 
+      id: 1, 
+      image: 'https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/025.png', 
+      title: 'Cartas Nuevas', 
+      description: 'Las últimas colecciones',
+      path: '/cartas-nuevas' // <--- RUTA NUEVA
     },
-    {
-      id: 2,
-      name: 'Charizard GX',
-      description: 'Edición especial',
-      price: '$49.990'
+    { 
+      id: 2, 
+      image: 'https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/006.png', 
+      title: 'Cartas Raras', 
+      description: 'Ediciones limitadas',
+      path: '/productos' // Puedes dirigir a productos o crear otra pag
     },
-    {
-      id: 3,
-      name: 'Mewtwo EX',
-      description: 'Carta promocional',
-      price: '$19.990'
+    { 
+      id: 3, 
+      image: 'https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/149.png', 
+      title: 'Ofertas', 
+      description: 'Descuentos especiales',
+      path: '/ofertas' 
     },
-    {
-      id: 4,
-      name: 'Eevee Evoluciones',
-      description: 'Set completo',
-      price: '$89.990'
+    { 
+      id: 4, 
+      image: 'https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/150.png', 
+      title: 'Accesorios', 
+      description: 'Accesorios para tus cartas',
+      path: '/accesorios'
     }
   ];
 
+  // Función para manejar el click en la categoría
+  const handleCategoryClick = (path) => {
+    if (path) {
+      navigate(path);
+      window.scrollTo(0, 0); // Para que la nueva página empiece desde arriba
+    }
+  };
 
-  const categories = [
-    { id: 1, image: 'https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/025.png', title: 'Cartas Nuevas', description: 'Las últimas colecciones' },
-    { id: 2, image: 'https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/006.png', title: 'Cartas Raras', description: 'Ediciones limitadas' },
-    { id: 3, image: 'https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/149.png', title: 'Ofertas', description: 'Descuentos especiales' },
-    { id: 4, image: 'https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/150.png', title: 'Accesorios', description: 'Accesorios para tus cartas' }
+  const products = [
+    { id: 1, name: 'Pikachu VMAX', description: 'Carta holográfica rara', price: '$29.990' },
+    { id: 2, name: 'Charizard GX', description: 'Edición especial', price: '$49.990' },
+    { id: 3, name: 'Mewtwo EX', description: 'Carta promocional', price: '$19.990' },
+    { id: 4, name: 'Eevee Evoluciones', description: 'Set completo', price: '$89.990' }
   ];
 
   return (
@@ -87,11 +64,17 @@ function HomePage() {
         <div className="hero-pokeball"></div>
       </section>
 
+      {/* Categories Section */}
       <section className="categories-section">
         <h2 className="section-title">Nuevos Productos</h2>
         <div className="categories-grid">
           {categories.map((cat) => (
-            <div key={cat.id} className="category-card">
+            <div 
+              key={cat.id} 
+              className="category-card" 
+              onClick={() => handleCategoryClick(cat.path)} // <--- AQUÍ ESTÁ LA MAGIA
+              style={{ cursor: 'pointer' }} // Para que aparezca la manito al pasar el mouse
+            >
               <img src={cat.image} alt={cat.title} className="category-image" />
               <h3>{cat.title}</h3>
               <p>{cat.description}</p>
@@ -100,11 +83,12 @@ function HomePage() {
         </div>
       </section>
 
+      {/* Products Section */}
       <section className="products-section">
         <h2 className="section-title">Productos Destacados</h2>
         <div className="products-grid">
-          {/*Renderizar prod*/}
           {products.map((prod) => (
+             // Asumiendo que ProductCard lo importas o lo defines arriba como tenías antes
             <ProductCard key={prod.id} product={prod} />
           ))}
         </div>
