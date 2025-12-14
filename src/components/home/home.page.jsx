@@ -87,7 +87,6 @@ function HomePage() {
         <div className="hero-pokeball"></div>
       </section>
 
-      {/* Sección de caregorias -> array*/}
       <section className="categories-section">
         <h2 className="section-title">Nuevos Productos</h2>
         <div className="categories-grid">
@@ -101,7 +100,6 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Featured Products*/}
       <section className="products-section">
         <h2 className="section-title">Productos Destacados</h2>
         <div className="products-grid">

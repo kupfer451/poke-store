@@ -1,24 +1,41 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import './product-card.styles.css';
+import React, { useState } from 'react';
 
 const ProductCard = ({ product }) => {
-  const navigate = useNavigate();
+  const [showAdded, setShowAdded] = useState(false);
 
   const handleAddToCart = () => {
-    navigate('/carrito');
+    console.log(`Agregaste a ${product.name}`);
+
+    setShowAdded(true);
+
+    setTimeout(() => {
+      setShowAdded(false);
+    }, 1000);
   };
 
   return (
     <div className="product-card">
-      {product.badge && <div className="product-badge">{product.badge}</div>}
-      <img src={product.imageUrl} alt={product.name} className="product-image" />
+      <div className="product-image">
+        <img src={product.imageUrl} alt={product.name} />
+      </div>
+      
       <div className="product-info">
         <h3 className="product-name">{product.name}</h3>
         <p className="product-description">{product.description}</p>
-        <p className="product-price">{product.price}</p>
-        <button className="add-to-cart-btn" onClick={handleAddToCart}>Agregar al Carrito</button>
+        
+        <div className="product-footer">
+          <span className="product-price">{product.price}</span>
+          <button className="add-to-cart" onClick={handleAddToCart}>
+            Agregar al Carrito
+          </button>
+        </div>
       </div>
+
+      {showAdded && (
+        <div className="mensaje-exito">
+          Producto agregado
+        </div>
+      )}
     </div>
   );
 };
