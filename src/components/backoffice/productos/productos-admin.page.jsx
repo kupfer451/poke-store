@@ -37,6 +37,7 @@ function ProductosAdminPage() {
     price: '',
     quantity: '',
     category: '',
+    image_url: '',
   });
 
   // Verificar permisos de admin
@@ -90,6 +91,7 @@ function ProductosAdminPage() {
       price: '',
       quantity: '',
       category: '',
+      image_url: '',
     });
     setEditingProduct(null);
     setShowForm(false);
@@ -105,12 +107,19 @@ function ProductosAdminPage() {
       return;
     }
 
+    // Validar URL de imagen si se proporciona
+    if (formData.image_url && !formData.image_url.match(/^https?:\/\//)) {
+      setError('La URL de la imagen debe comenzar con http:// o https://');
+      return;
+    }
+
     const productData = {
       product_name: formData.product_name,
       description: formData.description,
       price: Number(formData.price),
       quantity: Number(formData.quantity) || 0,
       category: formData.category,
+      image_url: formData.image_url || null,
     };
 
     try {
@@ -136,6 +145,7 @@ function ProductosAdminPage() {
       price: product.price?.toString() || '',
       quantity: product.quantity?.toString() || '',
       category: product.category || '',
+      image_url: product.image_url || '',
     });
     setShowForm(true);
     setError('');
@@ -273,6 +283,33 @@ function ProductosAdminPage() {
                 </div>
               </div>
 
+              <div className="form-group">
+                <label htmlFor="image_url">URL de Imagen</label>
+                <input
+                  type="url"
+                  id="image_url"
+                  name="image_url"
+                  value={formData.image_url}
+                  onChange={handleChange}
+                  placeholder="https://ejemplo.com/imagen.jpg"
+                />
+              </div>
+
+              {formData.image_url && formData.image_url.match(/^https?:\/\//) && (
+                <div className="image-preview">
+                  <p>Vista previa:</p>
+                  <img
+                    src={formData.image_url}
+                    alt="Vista previa"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.nextSibling.style.display = 'block';
+                    }}
+                  />
+                  <span className="image-error" style={{ display: 'none' }}>Error al cargar imagen</span>
+                </div>
+              )}
+
               <div className="form-buttons">
                 <button type="button" className="btn-cancel" onClick={resetForm}>
                   Cancelar
@@ -290,6 +327,7 @@ function ProductosAdminPage() {
         <table className="products-table">
           <thead>
             <tr>
+              <th>Imagen</th>
               <th>Nombre</th>
               <th>Categoría</th>
               <th>Precio</th>
@@ -300,13 +338,27 @@ function ProductosAdminPage() {
           <tbody>
             {products.length === 0 ? (
               <tr>
-                <td colSpan="5" className="no-products">
+                <td colSpan="6" className="no-products">
                   No hay productos disponibles
                 </td>
               </tr>
             ) : (
               products.map((product) => (
                 <tr key={product.id}>
+                  <td>
+                    {product.image_url ? (
+                      <img
+                        src={product.image_url}
+                        alt={product.product_name}
+                        className="product-thumbnail"
+                        onError={(e) => {
+                          e.target.style.display = 'none';
+                          e.target.nextSibling.style.display = 'flex';
+                        }}
+                      />
+                    ) : null}
+                    <div className="no-image" style={{ display: product.image_url ? 'none' : 'flex' }}>Sin imagen</div>
+                  </td>
                   <td>
                     <strong>{product.product_name}</strong>
                     {product.description && (

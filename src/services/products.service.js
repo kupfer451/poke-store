@@ -63,6 +63,7 @@ export const productsService = {
         quantity: productData.quantity,
         description: productData.description,
         category: productData.category,
+        image_url: productData.image_url || null,
       }),
     });
 
@@ -98,6 +99,7 @@ export const productsService = {
       quantity: editableData.quantity,
       description: editableData.description,
       category: editableData.category,
+      image_url: editableData.image_url || null,
     };
 
     const response = await fetch(`${API_BASE_URL}/${id}`, {
