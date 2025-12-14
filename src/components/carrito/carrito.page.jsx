@@ -56,9 +56,9 @@ function CarritoPage() {
         </div>
         <div className="cart-summary">
           <h3>Resumen del Pedido</h3>
-          <p>Subtotal: $0.00</p>
-          <p>Envío: $0.00</p>
-          <h4>Total: $0.00</h4>
+          <p>Subtotal: $0.000</p>
+          <p>Envío: $0.000</p>
+          <h4>Total: $0.000</h4>
           <div className="checkout-button-container">
             <button className="submit-button" onClick={handleFinalizarCompra}>Finalizar Compra</button>
           </div>

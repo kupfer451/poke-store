@@ -33,7 +33,7 @@ export default function Footer() {
           <h4>Contacto</h4>
           <ul className="footer-contact">
             <li>info@pokestore.com</li>
-            <li>+34 123 456 789</li>
+            <li>+569 55543432</li>
             <li>Ciudad Pokémon, CP 12345</li>
           </ul>
         </div>
@@ -41,11 +41,6 @@ export default function Footer() {
 
       <div className="footer-bottom">
         <p>&copy; 2025 PokeStore. Todos los derechos reservados.</p>
-        <div className="footer-social">
-          <a href="#" aria-label="Facebook">Facebook</a>
-          <a href="#" aria-label="Twitter">Twitter</a>
-          <a href="#" aria-label="Instagram">Instagram</a>
-        </div>
       </div>
     </footer>
   );
