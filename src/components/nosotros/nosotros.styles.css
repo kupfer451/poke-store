@@ -1,0 +1,18 @@
+.nosotros-container {
+  padding: 20px;
+}
+
+.nosotros-image {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  padding: 20px 0;
+}
+
+.nosotros-image img {
+  max-width: 100%;
+  height: auto;
+  max-height: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
