@@ -93,4 +93,11 @@
   box-shadow: 0 6px 20px rgba(255, 112, 166, 0.4);
 }
 
-
+.user-greeting {
+  color: var(--color-dark);
+  font-weight: 500;
+  padding: 8px 12px;
+  background: linear-gradient(135deg, var(--color-sky), var(--color-lime));
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
