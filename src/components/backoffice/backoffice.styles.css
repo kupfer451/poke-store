@@ -52,6 +52,23 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
+.backoffice-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+  color: #7fb3d5;
+}
+
+.backoffice-icon svg {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.backoffice-card:hover .backoffice-icon svg {
+  transform: scale(1.1);
+  color: #5a9ec5;
+}
+
 .backoffice-card h3 {
   font-size: 1.5rem;
   color: #2c3e50;

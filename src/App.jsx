@@ -12,6 +12,7 @@ import ColeccionPage from './components/coleccion/coleccion.page.jsx'
 import CartasNuevasPage from "./components/tarjetas/cartas-nuevas.jsx";
 import CartasRarasPage from "./components/tarjetas/cartas-raras.jsx";
 import BackofficePage from './components/backoffice/backoffice.page.jsx';
+import ProductosAdminPage from './components/backoffice/productos/productos-admin.page.jsx';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/cartas-nuevas" element={<CartasNuevasPage />} />
         <Route path="/cartas-raras" element={<CartasRarasPage />} />
         <Route path="/backoffice" element={<BackofficePage />} />
+        <Route path="/backoffice/productos" element={<ProductosAdminPage />} />
       </Routes>
 
       <Footer/>
