@@ -11,14 +11,14 @@ function HomePage() {
       id: 1, 
       image: 'https://media.discordapp.net/attachments/1449463615391531199/1450101151566663740/Cartas.png?ex=69414f70&is=693ffdf0&hm=45140adf39c3b067413cf77ddd6b7bd208686c2602bf0ef9fe1a770e5fecc823&=&format=webp&quality=lossless', 
       title: 'Cartas Nuevas', 
-      description: 'Cartas del juego Pókemon TCG de las últimas expansiones.',
+      description: 'Cartas del juego Pókemon TCG de las últimas expansiones',
       path: '/cartas-nuevas' 
     },
     { 
       id: 2, 
       image: 'https://media.discordapp.net/attachments/1449463615391531199/1450101152984072314/Peluches.png?ex=69414f70&is=693ffdf0&hm=1b42ad71beeed2d17c6da37f6a840af6bdf5b3ed31ace4f24c57f049c581983b&=&format=webp&quality=lossless', 
       title: 'Peluches', 
-      description: 'Peluches originales y exclusivos en distintos tamaños y diseños.',
+      description: 'Peluches originales y exclusivos en distintos tamaños y diseños',
       path: '/productos' 
     },
     { 

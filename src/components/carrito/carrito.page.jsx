@@ -77,12 +77,11 @@ function CarritoPage() {
     notes: '',
   });
 
-  const SHIPPING_COST = 3990; // Costo de envío fijo
+  const SHIPPING_COST = 3990;
 
   useEffect(() => {
     loadCart();
     
-    // Escuchar cambios en el carrito
     const handleCartUpdate = () => loadCart();
     window.addEventListener('cartUpdated', handleCartUpdate);
     
@@ -131,13 +130,11 @@ function CarritoPage() {
   const handleFinalizarCompra = async (e) => {
     e.preventDefault();
 
-    // Validar carrito
     if (cartItems.length === 0) {
       showMessage('No hay productos en el carrito', 'error');
       return;
     }
 
-    // Validar usuario autenticado
     const user = authService.getCurrentUser();
     if (!user) {
       showMessage('Debes iniciar sesión para realizar la compra', 'error');
@@ -145,7 +142,6 @@ function CarritoPage() {
       return;
     }
 
-    // Validar dirección
     if (!shippingData.address.trim() || !shippingData.city.trim()) {
       showMessage('Por favor completa la dirección y ciudad', 'error');
       return;
@@ -162,12 +158,10 @@ function CarritoPage() {
 
       const order = await ordersService.create(orderData);
       
-      // Limpiar carrito después de crear la orden
       cartService.clearCart();
       
       showMessage(`¡Orden creada exitosamente! ID: ${order.id.substring(0, 8)}...`, 'success');
       
-      // Limpiar formulario
       setShippingData({ address: '', city: '', notes: '' });
       
     } catch (error) {
@@ -193,7 +187,6 @@ function CarritoPage() {
           </div>
         ) : (
           <div className="carrito-content">
-            {/* Lista de productos */}
             <div className="carrito-items">
               <h2>Productos ({cartItems.length})</h2>
               
@@ -243,53 +236,47 @@ function CarritoPage() {
               ))}
             </div>
 
-            {/* Resumen y checkout */}
             <div className="carrito-sidebar">
-              {/* Formulario de envío */}
               <div className="shipping-form">
                 <h2><LocationIcon /> Información de Envío</h2>
                 <form onSubmit={handleFinalizarCompra}>
                   <div className="form-group">
-                    <label htmlFor="address">Dirección *</label>
+                    <label htmlFor="address">Dirección:</label>
                     <input
                       type="text"
                       id="address"
                       name="address"
                       value={shippingData.address}
                       onChange={handleInputChange}
-                      placeholder="Ej: Av. Principal 123"
                       required
                     />
                   </div>
                   
                   <div className="form-group">
-                    <label htmlFor="city">Ciudad *</label>
+                    <label htmlFor="city">Ciudad:</label>
                     <input
                       type="text"
                       id="city"
                       name="city"
                       value={shippingData.city}
                       onChange={handleInputChange}
-                      placeholder="Ej: Santiago"
                       required
                     />
                   </div>
                   
                   <div className="form-group">
-                    <label htmlFor="notes">Notas (opcional)</label>
+                    <label htmlFor="notes">Especificaciones (opcional):</label>
                     <textarea
                       id="notes"
                       name="notes"
                       value={shippingData.notes}
                       onChange={handleInputChange}
-                      placeholder="Instrucciones especiales de entrega..."
                       rows="3"
                     />
                   </div>
                 </form>
               </div>
 
-              {/* Resumen del pedido */}
               <div className="order-summary">
                 <h2><ClipboardIcon /> Resumen del Pedido</h2>
                 
