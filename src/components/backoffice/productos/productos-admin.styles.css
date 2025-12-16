@@ -43,7 +43,6 @@
   background: #7f8c8d;
 }
 
-/* Alertas */
 .alert {
   padding: 15px 20px;
   border-radius: 8px;
@@ -63,7 +62,6 @@
   border: 1px solid #c3e6cb;
 }
 
-/* Actions bar */
 .productos-admin-actions {
   display: flex;
   justify-content: space-between;
@@ -102,10 +100,9 @@
 
 .btn-add:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
+  box-shadow: 0 6px 20px rgba(39, 147, 174, 0.4);
 }
 
-/* Form overlay */
 .product-form-overlay {
   position: fixed;
   top: 0;
@@ -262,7 +259,6 @@
   box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
 }
 
-/* Products table */
 .products-table-container {
   background: white;
   border-radius: 15px;
@@ -384,7 +380,6 @@
   font-size: 1.1rem;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .productos-admin-header {
     flex-direction: column;

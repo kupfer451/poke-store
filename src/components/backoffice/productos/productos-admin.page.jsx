@@ -4,7 +4,6 @@ import authService from '../../../services/auth.service';
 import productsService from '../../../services/products.service';
 import './productos-admin.styles.css';
 
-// Iconos SVG
 const EditIcon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
@@ -40,7 +39,6 @@ function ProductosAdminPage() {
     image_url: '',
   });
 
-  // Verificar permisos de admin
   useEffect(() => {
     const user = authService.getCurrentUser();
     if (!user || !user.isAdmin) {
@@ -107,7 +105,6 @@ function ProductosAdminPage() {
       return;
     }
 
-    // Validar URL de imagen si se proporciona
     if (formData.image_url && !formData.image_url.match(/^https?:\/\//)) {
       setError('La URL de la imagen debe comenzar con http:// o https://');
       return;
@@ -239,8 +236,6 @@ function ProductosAdminPage() {
                     <option value="Cartas">Cartas</option>
                     <option value="Figuras">Figuras</option>
                     <option value="Accesorios">Accesorios</option>
-                    <option value="Ropa">Ropa</option>
-                    <option value="Otros">Otros</option>
                   </select>
                 </div>
               </div>

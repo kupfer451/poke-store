@@ -9,8 +9,6 @@ const CATEGORIES = [
   'Cartas',
   'Figuras',
   'Accesorios',
-  'Ropa',
-  'Otros'
 ];
 
 const ProductoPage = () => {

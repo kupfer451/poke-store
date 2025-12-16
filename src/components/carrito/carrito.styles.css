@@ -24,7 +24,6 @@
   color: #7fb3d5;
 }
 
-/* Carrito vacío */
 .carrito-empty {
   text-align: center;
   padding: 60px 20px;
@@ -65,14 +64,12 @@
   box-shadow: 0 5px 20px rgba(90, 158, 197, 0.4);
 }
 
-/* Contenido del carrito */
 .carrito-content {
   display: grid;
   grid-template-columns: 1fr 380px;
   gap: 30px;
 }
 
-/* Lista de items */
 .carrito-items {
   background: white;
   border-radius: 20px;
@@ -198,7 +195,6 @@
   color: white;
 }
 
-/* Sidebar */
 .carrito-sidebar {
   display: flex;
   flex-direction: column;
@@ -227,7 +223,7 @@
 .order-summary h2 svg {
   color: #7fb3d5;
 }
-}
+
 
 .form-group {
   margin-bottom: 18px;
@@ -264,7 +260,6 @@
   min-height: 80px;
 }
 
-/* Resumen */
 .summary-row {
   display: flex;
   justify-content: space-between;
@@ -326,7 +321,6 @@
   color: white;
 }
 
-/* Mensajes */
 .carrito-message {
   position: fixed;
   bottom: 30px;

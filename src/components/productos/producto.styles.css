@@ -46,6 +46,7 @@
   justify-content: center;
   background-color: #f0f4f7;
   margin: 0 auto;
+  border-radius: 8px; 
 }
 
 .product-image img {
@@ -54,6 +55,8 @@
   object-fit: contain;
   transition: transform 0.3s ease;
 }
+
+
 
 .product-card:hover .product-image img {
   transform: scale(1.1);
